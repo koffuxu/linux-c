@@ -4,6 +4,7 @@
     > Mail: koffuxu@gmail.com 
     > Created Time: Sat 06 Dec 2014 11:09:45 AM CST
     > fifo = named pipe
+    > but this code show unamed pipe
  ************************************************************************/
 
 #include<stdio.h>
