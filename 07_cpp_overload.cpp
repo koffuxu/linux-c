@@ -7,6 +7,7 @@
 
 #include<iostream>
 using namespace std;
+//function overload
 void print(int i)
 {
     cout<<"Print a integer:"<<i<<endl;
@@ -15,6 +16,8 @@ void print(string str)
 {
     cout<<"print a Streing:"<<str<<endl;
 }
+//class overload
+
 int main(){
     print(10);
     print("Hello Test CPP Overload!");

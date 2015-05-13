@@ -1,0 +1,223 @@
+
+10_cpp_point_refernce.arm:     file format elf32-littlearm
+
+
+Disassembly of section .init:
+
+00008418 <_init>:
+    8418:	b508      	push	{r3, lr}
+    841a:	f000 f84f 	bl	84bc <call_gmon_start>
+    841e:	bf00      	nop
+    8420:	bd08      	pop	{r3, pc}
+
+Disassembly of section .plt:
+
+00008424 <.plt>:
+    8424:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    8428:	e59fe004 	ldr	lr, [pc, #4]	; 8434 <_init+0x1c>
+    842c:	e08fe00e 	add	lr, pc, lr
+    8430:	e5bef008 	ldr	pc, [lr, #8]!
+    8434:	00008310 	.word	0x00008310
+    8438:	e28fc600 	add	ip, pc, #0, 12
+    843c:	e28cca08 	add	ip, ip, #8, 20	; 0x8000
+    8440:	e5bcf310 	ldr	pc, [ip, #784]!	; 0x310
+    8444:	e28fc600 	add	ip, pc, #0, 12
+    8448:	e28cca08 	add	ip, ip, #8, 20	; 0x8000
+    844c:	e5bcf308 	ldr	pc, [ip, #776]!	; 0x308
+    8450:	4778      	bx	pc
+    8452:	46c0      	nop			; (mov r8, r8)
+    8454:	e28fc600 	add	ip, pc, #0, 12
+    8458:	e28cca08 	add	ip, ip, #8, 20	; 0x8000
+    845c:	e5bcf2fc 	ldr	pc, [ip, #764]!	; 0x2fc
+    8460:	e28fc600 	add	ip, pc, #0, 12
+    8464:	e28cca08 	add	ip, ip, #8, 20	; 0x8000
+    8468:	e5bcf2f4 	ldr	pc, [ip, #756]!	; 0x2f4
+    846c:	e28fc600 	add	ip, pc, #0, 12
+    8470:	e28cca08 	add	ip, ip, #8, 20	; 0x8000
+    8474:	e5bcf2ec 	ldr	pc, [ip, #748]!	; 0x2ec
+    8478:	e28fc600 	add	ip, pc, #0, 12
+    847c:	e28cca08 	add	ip, ip, #8, 20	; 0x8000
+    8480:	e5bcf2e4 	ldr	pc, [ip, #740]!	; 0x2e4
+
+Disassembly of section .text:
+
+00008484 <_start>:
+    8484:	f04f 0b00 	mov.w	fp, #0
+    8488:	f04f 0e00 	mov.w	lr, #0
+    848c:	f85d 1b04 	ldr.w	r1, [sp], #4
+    8490:	466a      	mov	r2, sp
+    8492:	f84d 2d04 	str.w	r2, [sp, #-4]!
+    8496:	f84d 0d04 	str.w	r0, [sp, #-4]!
+    849a:	f8df c014 	ldr.w	ip, [pc, #20]	; 84b0 <_start+0x2c>
+    849e:	f84d cd04 	str.w	ip, [sp, #-4]!
+    84a2:	4804      	ldr	r0, [pc, #16]	; (84b4 <_start+0x30>)
+    84a4:	4b04      	ldr	r3, [pc, #16]	; (84b8 <_start+0x34>)
+    84a6:	f7ff efce 	blx	8444 <_init+0x2c>
+    84aa:	f7ff efc6 	blx	8438 <_init+0x20>
+    84ae:	0000      	.short	0x0000
+    84b0:	00008619 	.word	0x00008619
+    84b4:	0000855d 	.word	0x0000855d
+    84b8:	000085d5 	.word	0x000085d5
+
+000084bc <call_gmon_start>:
+    84bc:	4b03      	ldr	r3, [pc, #12]	; (84cc <call_gmon_start+0x10>)
+    84be:	4a04      	ldr	r2, [pc, #16]	; (84d0 <call_gmon_start+0x14>)
+    84c0:	447b      	add	r3, pc
+    84c2:	589b      	ldr	r3, [r3, r2]
+    84c4:	b10b      	cbz	r3, 84ca <call_gmon_start+0xe>
+    84c6:	f7ff bfc3 	b.w	8450 <_init+0x38>
+    84ca:	4770      	bx	lr
+    84cc:	00008280 	.word	0x00008280
+    84d0:	00000024 	.word	0x00000024
+
+000084d4 <deregister_tm_clones>:
+    84d4:	b508      	push	{r3, lr}
+    84d6:	4805      	ldr	r0, [pc, #20]	; (84ec <deregister_tm_clones+0x18>)
+    84d8:	4b05      	ldr	r3, [pc, #20]	; (84f0 <deregister_tm_clones+0x1c>)
+    84da:	1a1b      	subs	r3, r3, r0
+    84dc:	2b06      	cmp	r3, #6
+    84de:	d800      	bhi.n	84e2 <deregister_tm_clones+0xe>
+    84e0:	bd08      	pop	{r3, pc}
+    84e2:	4b04      	ldr	r3, [pc, #16]	; (84f4 <deregister_tm_clones+0x20>)
+    84e4:	2b00      	cmp	r3, #0
+    84e6:	d0fb      	beq.n	84e0 <deregister_tm_clones+0xc>
+    84e8:	4798      	blx	r3
+    84ea:	e7f9      	b.n	84e0 <deregister_tm_clones+0xc>
+    84ec:	00010774 	.word	0x00010774
+    84f0:	00010777 	.word	0x00010777
+    84f4:	00000000 	.word	0x00000000
+
+000084f8 <register_tm_clones>:
+    84f8:	b508      	push	{r3, lr}
+    84fa:	4807      	ldr	r0, [pc, #28]	; (8518 <register_tm_clones+0x20>)
+    84fc:	4b07      	ldr	r3, [pc, #28]	; (851c <register_tm_clones+0x24>)
+    84fe:	1a1b      	subs	r3, r3, r0
+    8500:	109b      	asrs	r3, r3, #2
+    8502:	eb03 73d3 	add.w	r3, r3, r3, lsr #31
+    8506:	1059      	asrs	r1, r3, #1
+    8508:	d100      	bne.n	850c <register_tm_clones+0x14>
+    850a:	bd08      	pop	{r3, pc}
+    850c:	4a04      	ldr	r2, [pc, #16]	; (8520 <register_tm_clones+0x28>)
+    850e:	2a00      	cmp	r2, #0
+    8510:	d0fb      	beq.n	850a <register_tm_clones+0x12>
+    8512:	4790      	blx	r2
+    8514:	e7f9      	b.n	850a <register_tm_clones+0x12>
+    8516:	bf00      	nop
+    8518:	00010774 	.word	0x00010774
+    851c:	00010774 	.word	0x00010774
+    8520:	00000000 	.word	0x00000000
+
+00008524 <__do_global_dtors_aux>:
+    8524:	b510      	push	{r4, lr}
+    8526:	4c04      	ldr	r4, [pc, #16]	; (8538 <__do_global_dtors_aux+0x14>)
+    8528:	7823      	ldrb	r3, [r4, #0]
+    852a:	b91b      	cbnz	r3, 8534 <__do_global_dtors_aux+0x10>
+    852c:	f7ff ffd2 	bl	84d4 <deregister_tm_clones>
+    8530:	2301      	movs	r3, #1
+    8532:	7023      	strb	r3, [r4, #0]
+    8534:	bd10      	pop	{r4, pc}
+    8536:	bf00      	nop
+    8538:	00010774 	.word	0x00010774
+
+0000853c <frame_dummy>:
+    853c:	4805      	ldr	r0, [pc, #20]	; (8554 <frame_dummy+0x18>)
+    853e:	b508      	push	{r3, lr}
+    8540:	6803      	ldr	r3, [r0, #0]
+    8542:	b113      	cbz	r3, 854a <frame_dummy+0xe>
+    8544:	4b04      	ldr	r3, [pc, #16]	; (8558 <frame_dummy+0x1c>)
+    8546:	b103      	cbz	r3, 854a <frame_dummy+0xe>
+    8548:	4798      	blx	r3
+    854a:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+    854e:	f7ff bfd3 	b.w	84f8 <register_tm_clones>
+    8552:	bf00      	nop
+    8554:	00010640 	.word	0x00010640
+    8558:	00000000 	.word	0x00000000
+
+0000855c <main>:
+    855c:	b480      	push	{r7}
+    855e:	b085      	sub	sp, #20
+    8560:	af00      	add	r7, sp, #0
+    8562:	6078      	str	r0, [r7, #4]
+    8564:	6039      	str	r1, [r7, #0]
+    8566:	2301      	movs	r3, #1
+    8568:	60fb      	str	r3, [r7, #12]
+    856a:	2300      	movs	r3, #0
+    856c:	4618      	mov	r0, r3
+    856e:	f107 0714 	add.w	r7, r7, #20
+    8572:	46bd      	mov	sp, r7
+    8574:	bc80      	pop	{r7}
+    8576:	4770      	bx	lr
+
+00008578 <_Z41__static_initialization_and_destruction_0ii>:
+    8578:	b580      	push	{r7, lr}
+    857a:	b082      	sub	sp, #8
+    857c:	af00      	add	r7, sp, #0
+    857e:	6078      	str	r0, [r7, #4]
+    8580:	6039      	str	r1, [r7, #0]
+    8582:	687b      	ldr	r3, [r7, #4]
+    8584:	2b01      	cmp	r3, #1
+    8586:	d118      	bne.n	85ba <_Z41__static_initialization_and_destruction_0ii+0x42>
+    8588:	683a      	ldr	r2, [r7, #0]
+    858a:	f64f 73ff 	movw	r3, #65535	; 0xffff
+    858e:	429a      	cmp	r2, r3
+    8590:	d113      	bne.n	85ba <_Z41__static_initialization_and_destruction_0ii+0x42>
+    8592:	f240 7078 	movw	r0, #1912	; 0x778
+    8596:	f2c0 0001 	movt	r0, #1
+    859a:	f7ff ef62 	blx	8460 <_init+0x48>
+    859e:	f240 7078 	movw	r0, #1912	; 0x778
+    85a2:	f2c0 0001 	movt	r0, #1
+    85a6:	f248 416c 	movw	r1, #33900	; 0x846c
+    85aa:	f2c0 0100 	movt	r1, #0
+    85ae:	f240 7270 	movw	r2, #1904	; 0x770
+    85b2:	f2c0 0201 	movt	r2, #1
+    85b6:	f7ff ef60 	blx	8478 <_init+0x60>
+    85ba:	f107 0708 	add.w	r7, r7, #8
+    85be:	46bd      	mov	sp, r7
+    85c0:	bd80      	pop	{r7, pc}
+    85c2:	bf00      	nop
+
+000085c4 <_GLOBAL__sub_I_main>:
+    85c4:	b580      	push	{r7, lr}
+    85c6:	af00      	add	r7, sp, #0
+    85c8:	2001      	movs	r0, #1
+    85ca:	f64f 71ff 	movw	r1, #65535	; 0xffff
+    85ce:	f7ff ffd3 	bl	8578 <_Z41__static_initialization_and_destruction_0ii>
+    85d2:	bd80      	pop	{r7, pc}
+
+000085d4 <__libc_csu_init>:
+    85d4:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+    85d8:	4606      	mov	r6, r0
+    85da:	4d0d      	ldr	r5, [pc, #52]	; (8610 <__libc_csu_init+0x3c>)
+    85dc:	460f      	mov	r7, r1
+    85de:	f8df 9034 	ldr.w	r9, [pc, #52]	; 8614 <__libc_csu_init+0x40>
+    85e2:	4690      	mov	r8, r2
+    85e4:	447d      	add	r5, pc
+    85e6:	f7ff ff17 	bl	8418 <_init>
+    85ea:	44f9      	add	r9, pc
+    85ec:	ebc5 0909 	rsb	r9, r5, r9
+    85f0:	ea5f 09a9 	movs.w	r9, r9, asr #2
+    85f4:	d00a      	beq.n	860c <__libc_csu_init+0x38>
+    85f6:	3d04      	subs	r5, #4
+    85f8:	2400      	movs	r4, #0
+    85fa:	f855 3f04 	ldr.w	r3, [r5, #4]!
+    85fe:	4630      	mov	r0, r6
+    8600:	4639      	mov	r1, r7
+    8602:	4642      	mov	r2, r8
+    8604:	3401      	adds	r4, #1
+    8606:	4798      	blx	r3
+    8608:	454c      	cmp	r4, r9
+    860a:	d1f6      	bne.n	85fa <__libc_csu_init+0x26>
+    860c:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+    8610:	0000804c 	.word	0x0000804c
+    8614:	0000804e 	.word	0x0000804e
+
+00008618 <__libc_csu_fini>:
+    8618:	4770      	bx	lr
+    861a:	bf00      	nop
+
+Disassembly of section .fini:
+
+0000861c <_fini>:
+    861c:	b508      	push	{r3, lr}
+    861e:	bf00      	nop
+    8620:	bd08      	pop	{r3, pc}
