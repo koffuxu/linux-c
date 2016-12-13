@@ -1,0 +1,17 @@
+True|f2@xyclcw.com|ZSpwd123|smtp.exmail.qq.com|f2@xyclcw.com|465|1|True
+True|f3@xyclcw.com|ZSpwd124|smtp.exmail.qq.com|f3@xyclcw.com|465|1|True
+True|f4@xyclcw.com|ZSpwd125|smtp.exmail.qq.com|f4@xyclcw.com|465|1|True
+True|f5@xyclcw.com|ZSpwd126|smtp.exmail.qq.com|f5@xyclcw.com|465|1|True
+True|f6@xyclcw.com|ZSpwd127|smtp.exmail.qq.com|f6@xyclcw.com|465|1|True
+True|f7@xyclcw.com|ZSpwd128|smtp.exmail.qq.com|f7@xyclcw.com|465|1|True
+True|f8@xyclcw.com|ZSpwd129|smtp.exmail.qq.com|f8@xyclcw.com|465|1|True
+True|f9@xyclcw.com|ZSpwd130|smtp.exmail.qq.com|f9@xyclcw.com|465|1|True
+True|f10@xyclcw.com|ZSpwd131|smtp.exmail.qq.com|f10@xyclcw.com|465|1|True
+False|ebvh12wu7|3d3j8rzta|173.com||25|0|False
+False|150569603|n8563325|qq.com||465|-1|True
+False|l11s0u4162|b5t8f0dzmk|173.com||25|0|False
+False|150567768|k6324735|qq.com||465|-1|True
+False|brw56li62d|9qtzq03j121|173.com||25|0|False
+False|x756f5g43k|h807we01476|173.com||25|0|False
+False|150567502|x2338043|qq.com||465|-1|True
+False|yzco2q072q75|pu0t6931p3|tom.com||25|0|False
